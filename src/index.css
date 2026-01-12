@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Sweet Sky Blue & White Theme */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* HSL Values */
+  --background: 204 100% 98%;      /* Very light sky blue background */
+  --foreground: 215 28% 17%;       /* Dark blue-grey text */
+  
+  --primary: 199 89% 48%;          /* Sky Blue */
+  --primary-foreground: 0 0% 100%; /* White */
+  
+  --secondary: 210 40% 96%;        /* Light grey-blue */
+  --secondary-foreground: 222 47% 11%;
+  
+  --muted: 210 40% 90%;
+  --muted-foreground: 215 16% 47%;
+  
+  --accent: 199 89% 48%;           /* Matching primary for accents */
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 199 89% 48%;
+  
+  --radius: 1rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-family: var(--font-body);
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Utilities */
+  .glass {
+    @apply bg-white/60 backdrop-blur-lg border border-white/40 shadow-xl shadow-sky-900/5;
+  }
+  
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-2xl;
+  }
+  
+  .glass-input {
+    @apply bg-white/50 border-white/60 focus:bg-white/80 focus:border-primary/50 backdrop-blur-sm transition-all duration-200;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 md:px-8 max-w-7xl mx-auto;
+  }
+}
