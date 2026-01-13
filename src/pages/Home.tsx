@@ -9,6 +9,7 @@ import { SiFastapi, SiRedis, SiApachekafka } from "react-icons/si";
 import { SectionHeading } from "../components/SectionHeading";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { profilePic } from "../assets";
 
 // -----------------------------------------------------------------------------
 // SECTIONS
@@ -63,17 +64,15 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="order-1 lg:order-2 flex justify-center lg:justify-end"
         >
-          <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px]">
+          <div className="relative w-[200px] h-[200px] md:w-[350px] md:h-[350px]">
              {/* Decorative Frame */}
             <div className="absolute inset-0 border-2 border-primary/20 rounded-[2rem] rotate-6 transform translate-x-4 translate-y-4" />
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-blue-200/20 rounded-[2rem] -rotate-3 transform -translate-x-2 -translate-y-2 backdrop-blur-sm" />
             
             {/* Image Container */}
             <div className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl bg-white">
-              {/* Using a placeholder from Unsplash since user image isn't available yet */}
-              {/* female programmer coding with sweet blue tones */}
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" 
+                src={profilePic}
                 alt="Ananya Paul" 
                 className="w-full h-full object-cover"
               />
